@@ -60,6 +60,8 @@ function setup() {
 
     function resetText() {
         inputText.value(''); // Réinitialise le champ texte
+        statsChars = [];
+        afficheFrequences();//réinitialise le tableau
       }
 
     // Fonctions pour générer le nouveau texte

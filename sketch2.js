@@ -57,6 +57,8 @@ function setup() {
 function resetText() {
     const inputText = select('#inputText');
     inputText.value(''); // Réinitialise le champ texte
+    statsLettres = {};
+    afficherStats();
   }
 
 function afficherStats(){
