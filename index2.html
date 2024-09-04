@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générer des suites de lettres</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch2.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="container">
+        <div class="onglets">
+            <a href="index.html" class="onglet">Expérience 1</a>
+            <a href="index2.html" class="onglet active">Expérience 2</a>
+            <a href="index3.html" class="onglet">Expérience 3</a>
+        </div>
+        <div id=""presentation" class="presentation">
+            <p>Maintenant, on va calculer à partir de votre texte, pour chaque caractère, la probabilité d'apparence d'un caractère qui le suit.
+            <br> On générera un texte en partant du caractère le plus probable, puis pour chaque nouvelle lettre, on fera un tirage au sort en pondérant par la probabilité calculée.
+            </p>
+            <p>Montrez votre résultat à une autre personne: peut-elle deviner depuis quelle langue le texte a été généré ?</p>
+        </div>
+        <div id="source">
+            <textarea id="inputText" placeholder="Entrez votre texte ici"></textarea>
+            <button id="submitButton">Valider</button>
+        </div>
+        
+        <div id="results">
+            
+            <div id="freqTable"></div>
+            <div id="generation">
+              <div>
+                <div id="lettreDepart"></div>
+                <input id="lengthInput" type="number" value="100" style="display: none;">
+                <button id="generateButton" style="display: none;">Générer Texte</button>
+                <br/>
+              </div>
+              <div id="generatedText"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

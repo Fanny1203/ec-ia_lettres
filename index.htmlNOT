@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse de Fréquences et Génération de Texte</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="inputColumn">
+            <textarea id="inputText" placeholder="Entrez votre texte ici"></textarea>
+            <button id="submitButton">Valider</button>
+        </div>
+        <div id="freqColumn">
+            <div id="freqTable"></div>
+        </div>
+        <div id="outputColumn">
+            <div class="input-group">
+                Longueur du texte : <input id="lengthInput" type="number" value="100" style="display: none;">
+                <button id="generateButton" style="display: none;">Générer Texte</button>
+            </div>
+            <div id="generatedText"></div>
+        </div>
+    </div>
+</body>
+</html>

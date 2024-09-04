@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générer des suites de lettres</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch2.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .btn {
+        padding: 10px 20px;
+        margin: 10px;
+        border: 5px solid transparent;
+        cursor: pointer;
+        background-color : gray;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+        background-color : black;
+    }
+
+    .correct {
+        border-color: green;
+    }
+
+    .incorrect {
+        border-color: red;
+    }
+
+    .explanation {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        display: none;
+    }
+</style>
+<body>
+    
+    <div id="container">
+        <div class="onglets">
+            <a href="index.html" class="onglet">Expérience 1</a>
+            <a href="index2.html" class="onglet">Expérience 2</a>
+            <a href="index3.html" class="onglet active">Expérience 3</a>
+        </div>
+        <div id=""presentation" class="presentation">
+            <h1>Comment fonctionne un LLM selon vous ?</h1>
+            <p>A votre avis, un LLM fonctionne-t-il comme dans l'expérience 1 (on tire au sort des mots les plus probables) ou l'expérience 2 (on tire au sort un mot probable suivant un certain mot) ou autrement ?</p>
+            <div>
+            <button id="exp1" class="btn">Comme dans l'expérience 1</button>
+            <button id="exp2" class="btn">Comme dans l'expérience 2</button>
+            <button id="other" class="btn">Autrement</button>
+        </div>
+        <div id="explanation"></div>
+
+        <script>
+            document.getElementById("exp1").addEventListener("click", function() {
+                showExplanation(false, this);
+            });
+
+            document.getElementById("exp2").addEventListener("click", function() {
+                showExplanation(false, this);
+            });
+
+            document.getElementById("other").addEventListener("click", function() {
+                showExplanation(true, this);
+            });
+
+            function showExplanation(isCorrect, button) {
+                // Reset all buttons
+                const buttons = document.querySelectorAll('.btn');
+                buttons.forEach(btn => btn.classList.remove('correct', 'incorrect'));
+
+                // Highlight the clicked button
+                if (isCorrect) {
+                    button.classList.add('correct');
+                } else {
+                    button.classList.add('incorrect');
+                }
+
+                // Show the explanation
+                const explanation = document.getElementById('explanation');
+                explanation.style.display = 'block';
+                explanation.innerHTML = "<br/>En réalité, un LLM ne fait rien de tout ça parce qu'aucun programme n'est vraiment spécifié. Les LLMs fonctionnent en \"machine learning\" : ils trouvent, par essais-erreurs, des stratégies qui fonctionnent pour générer des suites de mots sensées. Mais ces stratégies sont tellement complexes (des millions ou des milliards de \"paramètres\" sont ajustés) qu'en général, on ne les comprend pas.";
+            }
+        </script>
+        </div>
+        
+</body>
+</html>
