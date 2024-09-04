@@ -70,11 +70,11 @@
                 // Show the explanation
                 const explanation = document.getElementById('explanation');
                 explanation.style.display = 'block';
-                explanation.innerHTML = `<br/>Les recommandations de votre clavier de téléphone fonctionnent un peu comme ces deux algorithmes.
-                <br/>Un LLM comme chatGPT, en revanche, n'est pas directement codé pour faire des calculs statistiques.
-                <br/>Il est codé pour tester de très nombreux algorithmes, en gardant celui qui "marche" le mieux, durant une phase dite "d'entrainement".
-                <br/>L'algorithme retenu est tellement complexe qu'on ne peut pas vraiment l'interpéter. 
-                <br/>C'est en tous cas des millions de fois plus complexe que les deux algorithmes simples que nous avons vus dans les expériences 1 et 2.`;
+                explanation.innerHTML = `<br/>Les recommandations de votre clavier de téléphone fonctionnent un peu comme ces deux algorithmes: vous voyez le mot le plus probable au milieu puis des mots moins probables à gauche et à droite.
+                <br/>Un LLM comme chatGPT a aussi comme objectif de fournir une distribution de mots, à partir d'un texte donné en entrée mais il va utiliser une stratégie beaucoup plus complexe.
+                <br/>Les développeurs ne codent pas directement l'algorithme final, mais ils conçoivent une architecture qui permettra au LLM d'apprendre.
+                <br/>Un LLM est entraîné sur une quantité très importante de texte pour lesquels il va générer des prédictions de suites. En fonction des erreurs, ses très nombreux paramètres sont ajustés.
+                <br/>Le modèle retenu n'est pas parfait et il est si complexe qu'on ne pourrait pas le décrire précisémment.`;
             }
         </script>
         

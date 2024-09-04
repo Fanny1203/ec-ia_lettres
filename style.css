@@ -170,6 +170,32 @@ td {
 }
 
 
+.sub-presentation {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sub-presentation p {
+    margin-bottom: 0.8em;
+}
+
+.sub-presentation ul {
+    padding-left: 20px;
+    margin-bottom: 1em;
+}
+
+.sub-presentation li {
+    margin-bottom: 0.5em;
+}
+
+
+
 
 /*-----------------------ONGLETS----------------------------------*/
 .onglets {
@@ -211,3 +237,87 @@ td {
 }
 
 
+.letter {
+            font-weight: bold;
+            color: #2ed3c0;
+        }
+
+
+/* Media queries pour responsive design */
+@media (max-width: 768px) {
+    #container {
+        width: 100%; /* Pour tablette et mobile */
+    }
+
+    #results {
+        flex-direction: column; /* Les deux div seront empilées verticalement sur mobile */
+    }
+
+    #freqTable, #generation {
+        width: 100%; /* Les divs prennent 100% de la largeur */
+    }
+
+    textarea {
+        height: 150px; /* Réduire la hauteur du textarea sur les petits écrans */
+    }
+
+    button {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        font-size: 16px;
+    }
+
+    .onglet {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .onglet:not(:last-child)::after {
+        display: none; /* Masquer la flèche pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    textarea {
+        height: 120px;
+        width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+        width: 100%;
+    }
+
+    #container {
+        width: 100%;
+    }
+
+    #results {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #freqTable, #generation {
+        width: 100%;
+    }
+
+    /* Onglets en mode vertical */
+    .onglets {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .onglet {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .onglet:not(:last-child)::after {
+        display: none;
+    }
+}

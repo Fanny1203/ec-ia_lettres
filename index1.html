@@ -7,6 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="sketch1.js"></script>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     
@@ -19,7 +20,9 @@
             <a href="index3.html" class="onglet">Conclusion</a>
         </div>
         <div id=""presentation" class="presentation">
-            <p>Choisissez un texte puis générez un texte qui suit la même distribution de lettres.<br> (Précisément: on tire au sort chaque nouveau caractère en pondérant par la fréquence dans le texte source)</p>
+            <p>Choisissez un texte puis générez un texte qui suit la même <i>distribution</i> de lettres.
+            <br/>Une "distribution" de lettres, c'est comme une urne remplie de lettres où certaines apparaissent plusieurs fois parce qu'elles sont plus probables, et d'autres moins souvent car elles sont moins probables*.
+            <br/>On tire au sort chaque nouveau caractère dans cette distribution.</p>
             <p>Vous pouvez tester avec des textes dans différentes langues: les résultats sont très différents !</p>
     </div>
         <div id="source">
@@ -39,6 +42,19 @@
               </div>
               <div id="generatedText"></div>
             </div>
+        </div>
+
+        <div class="sub-presentation">
+            <p>*Exemple de distribution de lettres</p>
+            <ul>
+                <li>80% de chances de tirer "<span class="letter">e</span>"</li>
+                <li>10% de chances de tirer "<span class="letter">a</span>"</li>
+                <li>5% de chances de tirer "<span class="letter">o</span>"</li>
+                <li>5% de chances de tirer "<span class="letter">i</span>"</li>
+            </ul>
+            <p>C'est comme si on avait une urne avec 80 billes "<span class="letter">e</span>", 10 billes "<span class="letter">a</span>", 5 billes "<span class="letter">o</span>" et 5 billes "<span class="letter">i</span>". 
+                Si on tire une bille, on a plus de chances d'obtenir un "<span class="letter">e</span>" que les autres lettres, car "<span class="letter">e</span>" est plus probable dans ce contexte.</p>
+            
         </div>
     </div>
 </body>

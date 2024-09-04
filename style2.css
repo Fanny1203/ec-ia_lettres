@@ -1,0 +1,217 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Responsive pour textarea et boutons */
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid  #4CAF50;
+    border-radius: 10px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    box-shadow: 0 0 15px  #4CAF50;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color:  #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+    color: black;
+    background-color:  #4CAF50;
+}
+
+button.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button.correct, button.incorrect {
+    pointer-events: none;
+    opacity: 0.5;
+    border: 4px solid transparent;
+}
+
+button.correct {
+    border-color: blue;
+}
+
+button.incorrect {
+    border-color: red;
+}
+
+#freqTable, #generation {
+    width: 100%;
+    padding: 15px;
+    background-color: #34495e;
+    border: 2px solid  #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 0 15px  #4CAF50;
+}
+
+#generatedText {
+    width: 100%;
+    padding: 15px;
+    background-color: #34495e;
+    border: 2px solid  #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 0 15px  #4CAF50;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#results {
+    display: flex;
+    flex-direction: column; /* Change les éléments en colonne pour mobile */
+    justify-content: space-between;
+    gap: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+th, td {
+    border: 1px solid #ecf0f1;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color:  #4CAF50;
+    color: #ecf0f1;
+}
+
+td {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+.presentation {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sub-presentation {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles des onglets */
+.onglets {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux onglets de passer sur une nouvelle ligne si l'espace est limité */
+}
+
+.onglet {
+    position: relative;
+    padding: 10px 20px;
+    margin-right: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.onglet:hover {
+    background-color: #ddd;
+    opacity: 0.8;
+}
+
+.onglet.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Media queries pour responsive design */
+@media (max-width: 768px) {
+    #container {
+        width: 100%; /* Pour tablette et mobile */
+    }
+
+    #results {
+        flex-direction: column; /* Les deux div seront empilées verticalement sur mobile */
+    }
+
+    #freqTable, #generation {
+        width: 100%; /* Les divs prennent 100% de la largeur */
+    }
+
+    textarea {
+        height: 150px; /* Réduire la hauteur du textarea sur les petits écrans */
+    }
+
+    button {
+        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
+        font-size: 16px;
+    }
+
+    .onglet {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .onglet:not(:last-child)::after {
+        display: none; /* Masquer la flèche pour les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    textarea {
+        height: 120px; /* Encore plus petit pour les très petits écrans */
+    }
+
+    button {
+        font-size: 14px; /* Taille de texte plus petite pour les boutons sur mobile */
+        padding: 8px 15px;
+    }
+}
