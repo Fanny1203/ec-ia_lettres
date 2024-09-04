@@ -28,12 +28,15 @@
             <a href="index3.html" class="onglet active">Conclusion</a>
         </div>
         <div id=""presentation" class="presentation">
-            <h1>Comment fonctionne un LLM selon vous ?</h1>
-            <p>A votre avis, un LLM fonctionne-t-il comme dans l'expérience 1 (on tire au sort des mots les plus probables) ou l'expérience 2 (on tire au sort un mot probable suivant un certain mot) ou autrement ?</p>
+            <p/>Les recommandations de votre clavier de téléphone fonctionnent un peu comme ces deux algorithmes: vous voyez le mot le plus probable au milieu puis des mots moins probables à gauche et à droite.
+            <p/>L'algorithme est un peu plus sophistiqué, avez-vous des idées de ce qu'on pourrait améliorer ?
+            <p> Et les LLM ?!
+            <br/>A votre avis, un LLM fonctionne-t-il comme les recommandations de votre téléphone ?</p>
             <div>
-            <button id="exp1" >Comme dans l'expérience 1</button>
-            <button id="exp2" >Comme dans l'expérience 2</button>
-            <button id="other">Autrement</button>
+            <button id="exp1" >Oui, c'est juste une version améliorée de l'algorithme</button>
+            <br/><br/><button id="other">Oui, mais ce n'est plus directement l'humain qui écrit l'algorithme</button>
+            <br/><br/><button id="exp2" >Non, c'est la machine qui a tout fait toute seule</button>
+            
         </div>
         <div id="explanation" class=""explanation></div>
     </div></div>
@@ -70,12 +73,10 @@
                 // Show the explanation
                 const explanation = document.getElementById('explanation');
                 explanation.style.display = 'block';
-                explanation.innerHTML = `<br/>Les recommandations de votre clavier de téléphone fonctionnent un peu comme ces deux algorithmes: vous voyez le mot le plus probable au milieu puis des mots moins probables à gauche et à droite.
-                <br/>L'algorithme est un plus sophistiqué, avez-vous des idées de ce qu'on pourrait améliorer ?
-                <br/> Et les LLM ?!
-                <br/>Un LLM comme chatGPT a aussi comme objectif de fournir une distribution de mots, à partir d'un texte donné en entrée, mais il va utiliser une stratégie beaucoup beaucoup plus complexe.
-                <br/>Les développeurs ne codent pas directement l'algorithme final, mais ils conçoivent une architecture qui permettra au LLM d'apprendre.
-                <br/>Un LLM est entraîné sur une quantité très importante de texte pour lesquels il va générer des prédictions de suites. En fonction des erreurs, ses très nombreux paramètres sont ajustés.
+                explanation.innerHTML = `
+                <br/>Un LLM comme chatGPT a aussi comme objectif de fournir une distribution de mots, à partir d'un texte donné en entrée, mais il va utiliser une stratégie beaucoup, beaucoup plus complexe.
+                <br/>Les développeurs ne codent pas directement l'algorithme final, mais ils conçoivent une architecture qui permettra au LLM d' "apprendre"..
+                <br/>Un LLM est entraîné sur une quantité très importante de texte pour lesquels il va générer des prédictions de suites. En fonction des erreurs, les très nombreux paramètres de son algorithme sont ajustés.
                 <br/>Le modèle retenu n'est pas parfait et il est si complexe qu'on ne pourrait pas le décrire précisémment.`;
             }
         </script>
