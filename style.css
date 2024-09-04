@@ -43,7 +43,36 @@ button {
 }
 
 button:hover {
+    opacity: 0.8;
+    color:black;
     background-color:  #4CAF50;
+    
+}
+
+button.disabled {
+    pointer-events: none;
+    opacity: 0.5; /* Optionnel : rendre le bouton visuellement désactivé */
+}
+
+button.disabled:hover {
+    opacity: 0.8;
+    color:black;
+    background-color:  #4CAF50;
+    
+}
+
+button.correct {
+    border: 4px solid transparent;
+    border-color: blue;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+button.incorrect {
+    border: 4px solid transparent;
+    border-color: red;
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 #freqTable, #generation {
@@ -161,6 +190,7 @@ td {
 
 .onglet:hover {
     background-color: #ddd;
+    opacity: 0.8;
 }
 
 .onglet.active {

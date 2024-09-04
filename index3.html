@@ -5,30 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générer des suites de lettres</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="sketch2.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    .btn {
-        padding: 10px 20px;
-        margin: 10px;
-        border: 5px solid transparent;
-        cursor: pointer;
-        background-color : gray;
-    }
-
-    .btn:hover {
-        opacity: 0.8;
-        background-color : black;
-    }
-
-    .correct {
-        border-color: blue;
-    }
-
-    .incorrect {
-        border-color: red;
-    }
+    
 
     .explanation {
         margin-top: 20px;
@@ -42,20 +22,21 @@
     
     <div id="container">
         <div class="onglets">
-            <a href="index.html" class="onglet">Expérience 1</a>
+            <a href="index.html" class="onglet">Introduction</a>
+            <a href="index1.html" class="onglet">Expérience 1</a>
             <a href="index2.html" class="onglet">Expérience 2</a>
-            <a href="index3.html" class="onglet active">Expérience 3</a>
+            <a href="index3.html" class="onglet active">Conclusion</a>
         </div>
         <div id=""presentation" class="presentation">
             <h1>Comment fonctionne un LLM selon vous ?</h1>
             <p>A votre avis, un LLM fonctionne-t-il comme dans l'expérience 1 (on tire au sort des mots les plus probables) ou l'expérience 2 (on tire au sort un mot probable suivant un certain mot) ou autrement ?</p>
             <div>
-            <button id="exp1" class="btn">Comme dans l'expérience 1</button>
-            <button id="exp2" class="btn">Comme dans l'expérience 2</button>
-            <button id="other" class="btn">Autrement</button>
+            <button id="exp1" >Comme dans l'expérience 1</button>
+            <button id="exp2" >Comme dans l'expérience 2</button>
+            <button id="other">Autrement</button>
         </div>
-        <div id="explanation"></div>
-
+        <div id="explanation" class=""explanation></div>
+    </div></div>
         <script>
             document.getElementById("exp1").addEventListener("click", function() {
                 showExplanation(false, this);
@@ -71,8 +52,13 @@
 
             function showExplanation(isCorrect, button) {
                 // Reset all buttons
-                const buttons = document.querySelectorAll('.btn');
-                buttons.forEach(btn => btn.classList.remove('correct', 'incorrect'));
+                const buttons = document.querySelectorAll('#exp1, #exp2, #other');
+                console.log(buttons);
+                buttons.forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect'); // Supprime les classes 'correct' et 'incorrect'
+                    btn.classList.add('disabled'); // Ajoute la classe 'disabled'
+                });
+
 
                 // Highlight the clicked button
                 if (isCorrect) {
@@ -84,10 +70,12 @@
                 // Show the explanation
                 const explanation = document.getElementById('explanation');
                 explanation.style.display = 'block';
-                explanation.innerHTML = "<br/>En réalité, un LLM ne fait rien de tout ça parce qu'aucun programme n'est vraiment spécifié. Les LLMs fonctionnent en \"machine learning\" : ils trouvent, par essais-erreurs, des stratégies qui fonctionnent pour générer des suites de mots sensées. Mais ces stratégies sont tellement complexes (des millions ou des milliards de \"paramètres\" sont ajustés) qu'en général, on ne les comprend pas.";
+                explanation.innerHTML = `<br/>On ne sait pas exactement ce que fait une intelligence artificielle comme chatGPT. 
+                <br/>Elle va chercher une stratégie (un programme) qui \"marche\" bien mais qui est tellement complexe qu'on ne peut pas vraiment le comprendre. 
+                <br/>C'est en tous cas des millions de fois plus complexe que les deux algorithmes simples que nous avons vus dans les expériences 1 et 2.`;
             }
         </script>
-        </div>
+        
         
 </body>
 </html>

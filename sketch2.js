@@ -43,11 +43,21 @@ let totalLettres = 0;
 let lettreLaPlusProbable = '';
 
 
+
 function setup() {
     noCanvas(); // Pas besoin de canvas ici, car tout est en HTML
     const submitButton = select('#submitButton'); 
     submitButton.mousePressed(afficherStats);
+    const resetButton = select('#resetButton');
+    resetButton.mousePressed(resetText);
+    
+
 }
+
+function resetText() {
+    const inputText = select('#inputText');
+    inputText.value(''); // Réinitialise le champ texte
+  }
 
 function afficherStats(){
     const inputText = select('#inputText');

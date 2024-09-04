@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générer des suites de lettres</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="sketch.js"></script>
+    <script src="sketch1.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,11 +14,10 @@
     <div id="container">
         <div class="onglets">
             <a href="index.html" class="onglet">Introduction</a>
-            <a href="index1.html" class="onglet">Expérience 1</a>
-            <a href="index2.html" class="onglet active">Expérience 2</a>
+            <a href="index1.html" class="onglet active">Expérience 1</a>
+            <a href="index2.html" class="onglet">Expérience 2</a>
             <a href="index3.html" class="onglet">Conclusion</a>
         </div>
-        
         <div id=""presentation" class="presentation">
             <p>Choisissez un texte puis générez un texte qui suit la même distribution de lettres.<br> (Précisément: on tire au sort chaque nouveau caractère en pondérant par la fréquence dans le texte source)</p>
             <p>Vous pouvez tester avec des textes dans différentes langues: les résultats sont très différents !</p>
@@ -26,6 +25,7 @@
         <div id="source">
             <textarea id="inputText" placeholder="Entrez votre texte ici"></textarea>
             <button id="submitButton">Valider</button>
+            <button id="resetButton">Reset</button>
         </div>
         
         <div id="results">

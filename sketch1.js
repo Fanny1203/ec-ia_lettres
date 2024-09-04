@@ -4,6 +4,7 @@ function setup() {
     // Sélection des éléments HTML
     const inputText = select('#inputText');
     const submitButton = select('#submitButton');
+    const resetButton = select('#resetButton');
     const lengthInput = select('#lengthInput');
     const generateButton = select('#generateButton');
     const freqTable = select('#freqTable');
@@ -13,8 +14,8 @@ function setup() {
 
 
 
-    // Fonctions pour calculer les fréquences
     submitButton.mousePressed(afficheFrequences);
+    resetButton.mousePressed(resetText);
 
     
     function afficheFrequences(){
@@ -56,6 +57,10 @@ function setup() {
             statsChars.push([char, f, f/totalChars,fCumulee]);
         }
     }
+
+    function resetText() {
+        inputText.value(''); // Réinitialise le champ texte
+      }
 
     // Fonctions pour générer le nouveau texte
     generateButton.mousePressed(afficheTexteGenere);
